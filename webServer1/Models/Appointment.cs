@@ -11,5 +11,5 @@ public class Appointment
 	public IsApproved IsApproved { get; set; }
 }
 
-public enum Kind { hands,legs};
-public enum IsApproved {yes, no};
+public enum Kind { Hands,Legs};
+public enum IsApproved { Yes, No };

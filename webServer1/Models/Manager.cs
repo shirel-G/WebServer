@@ -6,10 +6,6 @@ public class Manager
 	public int Id { get; set; }
     public string? ManagerId { get; set; }
     public string? Password { get; set; }
-    //ShirelIsCute
-
-
-
-
+    public List<Appointment>? Appointments { get; set; }
 }
 
