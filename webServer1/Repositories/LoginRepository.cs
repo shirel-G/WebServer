@@ -42,6 +42,8 @@ public class LoginRepository : ILoginRepository
         {
             throw new Exception($"User Id {user.UserId} already exist");
         }
-        return await _context.Users.AddAsync(user);
-    }
+
+       await _context.Users.AddAsync(user);
+        return user;
+    }   
 }
