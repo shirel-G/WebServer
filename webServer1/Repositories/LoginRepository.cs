@@ -35,5 +35,13 @@ public class LoginRepository : ILoginRepository
         }
     }
 
-
+    public async Task<ActionResult<User>> AddNewUser(User user)
+    {
+        var userCheck = await _context.Users.FirstOrDefaultAsync(dataBaseUsers => dataBaseUsers.UserId == user.UserId);
+        if(userCheck != null)
+        {
+            throw new Exception($"User Id {user.UserId} already exist");
+        }
+        return await _context.Users.AddAsync(user);
+    }
 }

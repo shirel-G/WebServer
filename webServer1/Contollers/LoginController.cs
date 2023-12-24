@@ -27,7 +27,21 @@ public class LoginController : Controller
         }
     }
 
+    [HttpPost("SingUp")]
+    public async Task<ActionResult<User>> NewUser(User user)
+    {
+        try
+        {
+            var newUser = await _loginRepository.AddNewUser(user);
+            return Ok(newUser);
 
+        }
+        catch(Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+
+    }
    
 
 }
