@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using webServer1.Db_Context;
+using webServer1.Repositories;
 
 
 
@@ -12,7 +13,7 @@ builder.Services.AddRazorPages();
 var connectionString = "Data Source=(localdb)\\ProjectModels;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False;";
 
 builder.Services.AddDbContext<ServerContext>(opt => opt.UseSqlServer(connectionString));
-//builder.Services.AddScoped<UserRepo>();
+builder.Services.AddScoped<LoginRepository>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 var app = builder.Build();

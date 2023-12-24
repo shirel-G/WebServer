@@ -7,5 +7,5 @@ public class ServerContext : DbContext
 {
     public ServerContext(DbContextOptions<ServerContext> options) : base(options) { }
 
-    public DbSet<Customer> Customers { get; set; }
+    public DbSet<User> Users { get; set; }
 }
